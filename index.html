@@ -1,0 +1,2732 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Luxury Haven Hotel & Resort | 5-Star Luxury Accommodation, Spa & Fine Dining</title>
+    <meta name="description" content="Experience 5-star luxury at Luxury Haven Hotel. Premium accommodations, award-winning spa, gourmet dining, and world-class service in prime locations worldwide.">
+    <meta name="keywords" content="luxury hotel, 5-star hotel, spa resort, fine dining, luxury accommodation, boutique hotel, wedding venue, business hotel, luxury resort">
+    <meta name="author" content="Luxury Haven Hotel">
+    <meta property="og:title" content="Luxury Haven Hotel | Premium 5-Star Accommodation & Spa">
+    <meta property="og:description" content="Experience world-class luxury and impeccable service at our award-winning hotel.">
+    <meta property="og:image" content="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg">
+    <meta property="og:url" content="https://luxuryhavenhotel.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://luxuryhavenhotel.com">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Luxury Haven Hotel & Resort",
+      "description": "5-star luxury hotel offering premium accommodations, fine dining, and world-class spa services.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Luxury Avenue",
+        "addressLocality": "Metropolis",
+        "postalCode": "10001",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-555-123-4567",
+      "priceRange": "$$$",
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "amenityFeature": [
+        "Free WiFi",
+        "Swimming pool",
+        "Spa",
+        "Fitness center",
+        "Restaurant",
+        "Room service",
+        "Business center",
+        "Concierge service",
+        "Valet parking",
+        "Pet friendly"
+      ],
+      "image": [
+        "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+        "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg",
+        "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg"
+      ],
+      "url": "https://luxuryhavenhotel.com"
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <!-- AOS CSS (Animations) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #C19A6B;
+            --secondary: #0A1929;
+            --accent: #2A4365;
+            --light: #F7FAFC;
+            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #C19A6B 50%, #B8860B 100%);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --nav-bg: rgba(10, 25, 41, 0.95);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefefe;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+        
+        .text-primary { color: var(--primary); }
+        .bg-primary { background: var(--gold-gradient); }
+        .border-primary { border-color: var(--primary); }
+        
+        /* Page Transition */
+        .page {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Glass Effect */
+        .glass-effect {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Luxury Card */
+        .luxury-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+        
+        .luxury-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(193, 154, 107, 0.2);
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(193, 154, 107, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(193, 154, 107, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(193, 154, 107, 0); }
+        }
+        
+        .pulse-gold {
+            animation: pulse-gold 2s infinite;
+        }
+        
+        /* Loading Animation */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loader-circle {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(193, 154, 107, 0.2);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold-gradient);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        /* Hero Slider */
+        .hero-slide {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .hero-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(10, 25, 41, 0.9) 0%, rgba(10, 25, 41, 0.7) 100%);
+        }
+        
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--gold-gradient);
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gold-gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 10px 30px rgba(193, 154, 107, 0.3);
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        /* Gallery Hover */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(10, 25, 41, 0.9) 0%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        /* Feature Tags */
+        .feature-tag {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(193, 154, 107, 0.1);
+            padding: 8px 16px;
+            border-radius: 30px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .feature-tag i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+        
+        /* Price Tag */
+        .price-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gold-gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(193, 154, 107, 0.3);
+        }
+        
+        /* Amenity Icon */
+        .amenity-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: rgba(193, 154, 107, 0.1);
+            border: 2px solid rgba(193, 154, 107, 0.2);
+            transition: all 0.3s ease;
+            font-size: 30px;
+            color: var(--primary);
+        }
+        
+        .amenity-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(193, 154, 107, 0.2);
+            border-color: var(--primary);
+        }
+        
+        /* Testimonial Card */
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card::before {
+            content: "❝";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            color: rgba(193, 154, 107, 0.1);
+            font-family: serif;
+        }
+        
+        /* Room Image */
+        .room-image {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .room-image img {
+            transition: transform 0.8s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .luxury-card:hover .room-image img {
+            transform: scale(1.1);
+        }
+        
+        /* Booking Form */
+        .booking-form {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .booking-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+        
+        /* Counter Animation */
+        .counter {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Social Icon */
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(193, 154, 107, 0.1);
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--gold-gradient);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        /* Parallax */
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .parallax-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 25, 41, 0.85);
+        }
+        
+        /* Menu Item */
+        .menu-item {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .menu-item::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold-gradient);
+            transition: width 0.3s ease;
+        }
+        
+        .menu-item:hover::after {
+            width: 100%;
+        }
+        
+        /* Swiper Custom */
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: white;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+        
+        .swiper-pagination-bullet-active {
+            width: 30px;
+            border-radius: 10px;
+            background: var(--gold-gradient);
+            opacity: 1;
+        }
+        
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px;
+        }
+        
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            transform: scale(1.1);
+            background: var(--gold-gradient);
+            color: white;
+        }
+        
+        /* Notification Popup */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            z-index: 10000;
+            transform: translateX(150%);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 300px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification.success {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        }
+        
+        .notification.error {
+            background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+        }
+        
+        .notification.info {
+            background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+        }
+        
+        /* Booking Table */
+        .booking-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .booking-table th {
+            background: var(--gold-gradient);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .booking-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .booking-table tr:hover {
+            background: rgba(193, 154, 107, 0.05);
+        }
+        
+        /* Status Badges */
+        .status-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        .status-confirmed {
+            background: rgba(76, 175, 80, 0.1);
+            color: #4CAF50;
+        }
+        
+        .status-pending {
+            background: rgba(255, 193, 7, 0.1);
+            color: #FF9800;
+        }
+        
+        .status-cancelled {
+            background: rgba(244, 67, 54, 0.1);
+            color: #F44336;
+        }
+        
+        /* Auth Forms */
+        .auth-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+        
+        .auth-tabs {
+            display: flex;
+            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 30px;
+        }
+        
+        .auth-tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .auth-tab.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* User Profile */
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem !important; }
+            h2 { font-size: 2rem !important; }
+            h3 { font-size: 1.75rem !important; }
+            .hero-slide { height: 80vh; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Page Loader -->
+    <div id="pageLoader" class="page-loader">
+        <div class="loader-circle"></div>
+    </div>
+    
+    <!-- Notification Popup -->
+    <div id="notification" class="notification">
+        <div class="flex items-center">
+            <i id="notificationIcon" class="fas fa-check-circle mr-3 text-xl"></i>
+            <div>
+                <h4 id="notificationTitle" class="font-bold">Success!</h4>
+                <p id="notificationMessage" class="text-sm opacity-90">Operation completed successfully.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-nav-bg shadow-lg" id="mainNav" style="background: var(--nav-bg);">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+                    <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                        <i class="fas fa-crown text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-white">Luxury<span class="text-primary">Haven</span></h1>
+                        <p class="text-xs text-gray-300">Hotel & Spa Resort</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a onclick="navigateTo('home')" class="nav-link text-white font-medium cursor-pointer">Home</a>
+                    <a onclick="navigateTo('rooms')" class="nav-link text-white font-medium cursor-pointer">Rooms</a>
+                    <a onclick="navigateTo('dining')" class="nav-link text-white font-medium cursor-pointer">Dining</a>
+                    <a onclick="navigateTo('spa')" class="nav-link text-white font-medium cursor-pointer">Spa</a>
+                    <a onclick="navigateTo('events')" class="nav-link text-white font-medium cursor-pointer">Events</a>
+                    <a onclick="navigateTo('gallery')" class="nav-link text-white font-medium cursor-pointer">Gallery</a>
+                    <a onclick="navigateTo('offers')" class="nav-link text-white font-medium cursor-pointer">Offers</a>
+                    <a onclick="navigateTo('about')" class="nav-link text-white font-medium cursor-pointer">About</a>
+                    <a onclick="navigateTo('bookings')" class="nav-link text-white font-medium cursor-pointer">My Bookings</a>
+                    <a onclick="navigateTo('contact')" class="nav-link text-white font-medium cursor-pointer">Contact</a>
+                    
+                    <!-- User/Auth Section -->
+                    <div id="userSection" class="flex items-center space-x-4">
+                        <div id="authButtons" class="flex space-x-4">
+                            <button onclick="navigateTo('auth')" class="bg-white text-secondary px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition-all duration-300">
+                                Login
+                            </button>
+                            <button onclick="navigateTo('auth')" class="bg-primary text-white px-6 py-2 rounded-full font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                Sign Up
+                            </button>
+                        </div>
+                        <div id="userProfile" class="hidden flex items-center space-x-3">
+                            <div class="user-avatar" id="userAvatar">U</div>
+                            <div>
+                                <p class="text-white font-medium" id="userName">User</p>
+                                <button onclick="logout()" class="text-gray-300 text-sm hover:text-white transition">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="navigateTo('booking')" class="bg-primary text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                        Book Now
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-white text-2xl" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed inset-0 bg-secondary z-40 lg:hidden" id="mobileMenu">
+        <div class="flex justify-end p-6">
+            <button class="text-white text-3xl" id="closeMobileMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a onclick="navigateTo('home')" class="text-white text-2xl font-medium cursor-pointer">Home</a>
+            <a onclick="navigateTo('rooms')" class="text-white text-2xl font-medium cursor-pointer">Rooms</a>
+            <a onclick="navigateTo('dining')" class="text-white text-2xl font-medium cursor-pointer">Dining</a>
+            <a onclick="navigateTo('spa')" class="text-white text-2xl font-medium cursor-pointer">Spa</a>
+            <a onclick="navigateTo('events')" class="text-white text-2xl font-medium cursor-pointer">Events</a>
+            <a onclick="navigateTo('gallery')" class="text-white text-2xl font-medium cursor-pointer">Gallery</a>
+            <a onclick="navigateTo('offers')" class="text-white text-2xl font-medium cursor-pointer">Offers</a>
+            <a onclick="navigateTo('about')" class="text-white text-2xl font-medium cursor-pointer">About</a>
+            <a onclick="navigateTo('bookings')" class="text-white text-2xl font-medium cursor-pointer">My Bookings</a>
+            <a onclick="navigateTo('contact')" class="text-white text-2xl font-medium cursor-pointer">Contact</a>
+            
+            <div id="mobileAuthButtons" class="flex flex-col space-y-4">
+                <button onclick="navigateTo('auth')" class="bg-white text-secondary px-8 py-3 rounded-full font-medium text-lg">
+                    Login
+                </button>
+                <button onclick="navigateTo('auth')" class="bg-primary text-white px-8 py-3 rounded-full font-medium text-lg">
+                    Sign Up
+                </button>
+            </div>
+            
+            <button onclick="navigateTo('booking')" class="bg-primary text-white px-8 py-3 rounded-full font-medium text-lg mt-8">
+                Book Now
+            </button>
+        </div>
+    </div>
+    
+    <!-- Page Container -->
+    <main>
+        <!-- ========== HOME PAGE ========== -->
+        <div id="home-page" class="page active">
+            <!-- Hero Section -->
+            <section class="relative">
+                <div class="swiper heroSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="hero-slide" style="background-image: url('https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1600')">
+                                <div class="container mx-auto px-6 h-full flex items-center relative z-10">
+                                    <div class="max-w-2xl" data-aos="fade-up" data-aos-duration="1000">
+                                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">WELCOME TO LUXURY</h6>
+                                        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">Experience Ultimate Luxury & Comfort</h1>
+                                        <p class="text-xl text-gray-300 mb-10">An award-winning 5-star hotel offering unparalleled service, exquisite dining, and world-class amenities in the heart of the city.</p>
+                                        <div class="flex flex-wrap gap-4">
+                                            <button onclick="navigateTo('booking')" class="bg-primary text-white px-8 py-4 rounded-full font-medium text-lg flex items-center pulse-gold">
+                                                Book Your Stay <i class="fas fa-arrow-right ml-3"></i>
+                                            </button>
+                                            <button onclick="navigateTo('rooms')" class="glass-effect text-white px-8 py-4 rounded-full font-medium text-lg flex items-center">
+                                                <i class="fas fa-bed mr-3"></i> View Rooms
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="hero-slide" style="background-image: url('https://images.pexels.com/photos/237371/pexels-photo-237371.jpeg?auto=compress&cs=tinysrgb&w=1600')">
+                                <div class="container mx-auto px-6 h-full flex items-center relative z-10">
+                                    <div class="max-w-2xl" data-aos="fade-up" data-aos-duration="1000">
+                                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">AWARD-WINNING SPA</h6>
+                                        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">Rejuvenate Your Senses</h1>
+                                        <p class="text-xl text-gray-300 mb-10">Discover our world-class spa treatments, holistic wellness programs, and relaxation therapies designed for complete rejuvenation.</p>
+                                        <div class="flex flex-wrap gap-4">
+                                            <button onclick="navigateTo('spa')" class="bg-primary text-white px-8 py-4 rounded-full font-medium text-lg flex items-center">
+                                                Explore Spa <i class="fas fa-spa ml-3"></i>
+                                            </button>
+                                            <button onclick="navigateTo('offers')" class="glass-effect text-white px-8 py-4 rounded-full font-medium text-lg flex items-center">
+                                                View Packages
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                
+                <!-- Booking Widget -->
+                <div class="container mx-auto px-6 relative -mt-20 z-20" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="booking-form max-w-6xl mx-auto">
+                        <h3 class="text-2xl font-bold mb-8 text-center">Book Your Luxury Escape</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            <div>
+                                <label class="block text-gray-700 mb-3 font-medium">Check-In</label>
+                                <div class="relative">
+                                    <input type="date" id="checkInDate" class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    <i class="fas fa-calendar-alt absolute right-4 top-4 text-gray-400"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-3 font-medium">Check-Out</label>
+                                <div class="relative">
+                                    <input type="date" id="checkOutDate" class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    <i class="fas fa-calendar-alt absolute right-4 top-4 text-gray-400"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-3 font-medium">Guests & Rooms</label>
+                                <div class="relative">
+                                    <select id="guestsSelect" class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 appearance-none">
+                                        <option>2 Adults, 1 Room</option>
+                                        <option>2 Adults, 2 Rooms</option>
+                                        <option>3 Adults, 1 Room</option>
+                                        <option>4 Adults, 2 Rooms</option>
+                                        <option>Family Package</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down absolute right-4 top-4 text-gray-400"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-end">
+                                <button onclick="quickBook()" class="w-full bg-primary text-white p-4 rounded-xl font-medium text-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Check Availability
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="py-20 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                            <div class="counter text-5xl font-bold mb-4" data-target="150">0</div>
+                            <p class="text-gray-600 font-medium">Luxury Rooms</p>
+                        </div>
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="counter text-5xl font-bold mb-4" data-target="24">0</div>
+                            <p class="text-gray-600 font-medium">Hour Service</p>
+                        </div>
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                            <div class="counter text-5xl font-bold mb-4" data-target="5">0</div>
+                            <p class="text-gray-600 font-medium">Star Rating</p>
+                        </div>
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                            <div class="counter text-5xl font-bold mb-4" data-target="98">0</div>
+                            <p class="text-gray-600 font-medium">Guest Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Rooms -->
+            <section class="py-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">FEATURED</h6>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Signature Rooms & Suites</h2>
+                        <p class="text-gray-600 max-w-3xl mx-auto text-lg">Experience unparalleled comfort in our meticulously designed rooms and suites.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="luxury-card" data-aos="fade-up">
+                            <div class="room-image">
+                                <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg" alt="Deluxe Room">
+                                <div class="price-tag">$299/night</div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold mb-3">Deluxe City View</h3>
+                                <p class="text-gray-600 mb-6">Spacious room with panoramic city views and modern amenities.</p>
+                                <button onclick="quickBookRoom('Deluxe City View', 299)" class="w-full bg-primary text-white py-4 rounded-xl font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="luxury-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="room-image">
+                                <img src="https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg" alt="Executive Suite">
+                                <div class="price-tag">$499/night</div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold mb-3">Executive Suite</h3>
+                                <p class="text-gray-600 mb-6">Luxurious suite with separate living area and private balcony.</p>
+                                <button onclick="quickBookRoom('Executive Suite', 499)" class="w-full bg-primary text-white py-4 rounded-xl font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="luxury-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="room-image">
+                                <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg" alt="Presidential Suite">
+                                <div class="price-tag">$899/night</div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold mb-3">Presidential Suite</h3>
+                                <p class="text-gray-600 mb-6">Ultimate luxury with panoramic ocean views and butler service.</p>
+                                <button onclick="quickBookRoom('Presidential Suite', 899)" class="w-full bg-primary text-white py-4 rounded-xl font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Parallax Section -->
+            <section class="parallax-section py-32" style="background-image: url('https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg')">
+                <div class="container mx-auto px-6 relative z-10 text-center" data-aos="fade-up">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Unforgettable Experiences Await</h2>
+                    <p class="text-xl text-gray-300 mb-10">From romantic getaways to business retreats, we craft personalized experiences that exceed expectations.</p>
+                    <button onclick="navigateTo('offers')" class="bg-primary text-white px-8 py-4 rounded-full font-medium text-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                        View Special Offers
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========== ROOMS PAGE ========== -->
+        <div id="rooms-page" class="page">
+            <section class="pt-32 pb-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">ACCOMMODATION</h6>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Rooms & Suites</h2>
+                        <p class="text-gray-600 max-w-3xl mx-auto text-lg">Discover our collection of luxurious accommodations, each designed to provide the ultimate in comfort and style.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                        <div class="luxury-card" data-aos="fade-up">
+                            <div class="room-image">
+                                <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg" alt="Deluxe Room">
+                                <div class="price-tag">$299/night</div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold mb-3">Deluxe City View</h3>
+                                <p class="text-gray-600 mb-4">Spacious room with panoramic city views, king-sized bed, and modern amenities.</p>
+                                <div class="mb-6">
+                                    <span class="feature-tag"><i class="fas fa-wifi"></i> Free WiFi</span>
+                                    <span class="feature-tag"><i class="fas fa-tv"></i> Smart TV</span>
+                                    <span class="feature-tag"><i class="fas fa-wine-glass"></i> Minibar</span>
+                                </div>
+                                <button onclick="quickBookRoom('Deluxe City View', 299)" class="w-full bg-primary text-white py-4 rounded-xl font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="luxury-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="room-image">
+                                <img src="https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg" alt="Executive Suite">
+                                <div class="price-tag">$499/night</div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold mb-3">Executive Suite</h3>
+                                <p class="text-gray-600 mb-4">Luxurious suite with separate living area, private balcony, and premium amenities.</p>
+                                <div class="mb-6">
+                                    <span class="feature-tag"><i class="fas fa-utensils"></i> Kitchenette</span>
+                                    <span class="feature-tag"><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+                                    <span class="feature-tag"><i class="fas fa-concierge-bell"></i> Butler Service</span>
+                                </div>
+                                <button onclick="quickBookRoom('Executive Suite', 499)" class="w-full bg-primary text-white py-4 rounded-xl font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="luxury-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="room-image">
+                                <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg" alt="Presidential Suite">
+                                <div class="price-tag">$899/night</div>
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold mb-3">Presidential Suite</h3>
+                                <p class="text-gray-600 mb-4">Ultimate luxury with panoramic ocean views, private pool, and 24/7 butler service.</p>
+                                <div class="mb-6">
+                                    <span class="feature-tag"><i class="fas fa-swimming-pool"></i> Private Pool</span>
+                                    <span class="feature-tag"><i class="fas fa-crown"></i> VIP Service</span>
+                                    <span class="feature-tag"><i class="fas fa-car"></i> Private Driver</span>
+                                </div>
+                                <button onclick="quickBookRoom('Presidential Suite', 899)" class="w-full bg-primary text-white py-4 rounded-xl font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Amenities Section -->
+                    <div class="bg-gray-50 rounded-3xl p-12" data-aos="fade-up">
+                        <h3 class="text-3xl font-bold mb-12 text-center">Room Amenities</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                            <div class="text-center">
+                                <div class="amenity-icon">
+                                    <i class="fas fa-wifi"></i>
+                                </div>
+                                <h4 class="font-bold mb-2">High-Speed WiFi</h4>
+                                <p class="text-gray-600 text-sm">Complimentary high-speed internet</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="amenity-icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <h4 class="font-bold mb-2">Gourmet Minibar</h4>
+                                <p class="text-gray-600 text-sm">Premium snacks & beverages</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="amenity-icon">
+                                    <i class="fas fa-tv"></i>
+                                </div>
+                                <h4 class="font-bold mb-2">Smart TV</h4>
+                                <p class="text-gray-600 text-sm">Streaming services included</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="amenity-icon">
+                                    <i class="fas fa-spa"></i>
+                                </div>
+                                <h4 class="font-bold mb-2">Luxury Toiletries</h4>
+                                <p class="text-gray-600 text-sm">Premium spa-grade products</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========== DINING PAGE ========== -->
+        <div id="dining-page" class="page">
+            <section class="pt-32 pb-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">CULINARY EXPERIENCE</h6>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Fine Dining & Restaurants</h2>
+                        <p class="text-gray-600 max-w-3xl mx-auto text-lg">Experience world-class cuisine crafted by our Michelin-starred chefs in breathtaking settings.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                        <div class="luxury-card" data-aos="fade-right">
+                            <div class="room-image">
+                                <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg" alt="Aurora Restaurant">
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold mb-3">Aurora Fine Dining</h3>
+                                <p class="text-gray-600 mb-4">Michelin-starred restaurant offering contemporary cuisine with panoramic city views.</p>
+                                <div class="mb-6">
+                                    <div class="flex items-center mb-2">
+                                        <i class="fas fa-clock text-primary mr-3"></i>
+                                        <span>Dinner: 6 PM - 11 PM</span>
+                                    </div>
+                                    <div class="flex items-center mb-2">
+                                        <i class="fas fa-utensils text-primary mr-3"></i>
+                                        <span>Modern European Cuisine</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-wine-glass-alt text-primary mr-3"></i>
+                                        <span>Extensive Wine Collection</span>
+                                    </div>
+                                </div>
+                                <button onclick="showNotification('info', 'Reservation', 'Please call +1-555-123-4567 to reserve a table')" class="w-full bg-primary text-white py-4 rounded-xl font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Reserve Table
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="luxury-card" data-aos="fade-left">
+                            <div class="room-image">
+                                <img src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg" alt="Poolside Grill">
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold mb-3">Poolside Grill</h3>
+                                <p class="text-gray-600 mb-4">Casual dining with fresh seafood, grilled specialties, and tropical cocktails.</p>
+                                <div class="mb-6">
+                                    <div class="flex items-center mb-2">
+                                        <i class="fas fa-clock text-primary mr-3"></i>
+                                        <span>11 AM - 10 PM Daily</span>
+                                    </div>
+                                    <div class="flex items-center mb-2">
+                                        <i class="fas fa-utensils text-primary mr-3"></i>
+                                        <span>Seafood & Grill</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-cocktail text-primary mr-3"></i>
+                                        <span>Tropical Cocktails</span>
+                                    </div>
+                                </div>
+                                <button onclick="showNotification('info', 'Reservation', 'Please call +1-555-123-4567 to reserve a table')" class="w-full bg-primary text-white py-4 rounded-xl font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    View Menu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Highlights -->
+                    <div class="bg-white rounded-3xl p-12 shadow-xl" data-aos="fade-up">
+                        <h3 class="text-3xl font-bold mb-12 text-center">Chef's Specials</h3>
+                        <div class="space-y-8">
+                            <div class="menu-item">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-2">Lobster Thermidor</h4>
+                                        <p class="text-gray-600">Fresh Maine lobster with creamy mushroom sauce</p>
+                                    </div>
+                                    <span class="text-primary font-bold text-xl">$68</span>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-2">Wagyu Beef Tenderloin</h4>
+                                        <p class="text-gray-600">A5 Japanese wagyu with truffle mashed potatoes</p>
+                                    </div>
+                                    <span class="text-primary font-bold text-xl">$95</span>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-2">Truffle Risotto</h4>
+                                        <p class="text-gray-600">Arborio rice with black truffle and parmesan</p>
+                                    </div>
+                                    <span class="text-primary font-bold text-xl">$42</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========== SPA PAGE ========== -->
+        <div id="spa-page" class="page">
+            <section class="pt-32 pb-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">WELLNESS & RELAXATION</h6>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Tranquility Spa</h2>
+                        <p class="text-gray-600 max-w-3xl mx-auto text-lg">Rejuvenate your mind, body, and soul with our award-winning spa treatments and holistic wellness programs.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                        <div data-aos="fade-right">
+                            <img src="https://images.pexels.com/photos/3762875/pexels-photo-3762875.jpeg" alt="Spa Treatment" class="rounded-3xl w-full h-96 object-cover">
+                        </div>
+                        <div data-aos="fade-left">
+                            <h3 class="text-3xl font-bold mb-6">World-Class Spa Experience</h3>
+                            <p class="text-gray-600 mb-6">Our 10,000 sq ft spa facility features 15 treatment rooms, hydrotherapy pools, steam rooms, and a state-of-the-art fitness center.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-primary mr-4"></i>
+                                    <span>Customized treatments for every need</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-primary mr-4"></i>
+                                    <span>Organic, locally-sourced products</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-primary mr-4"></i>
+                                    <span>Certified therapists and estheticians</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-primary mr-4"></i>
+                                    <span>Private couple's suites available</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Treatments -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-aos="fade-up">
+                        <div class="luxury-card">
+                            <div class="p-8">
+                                <div class="amenity-icon mb-6">
+                                    <i class="fas fa-spa"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Signature Massage</h3>
+                                <p class="text-gray-600 mb-6">90-minute full-body massage with aromatherapy oils and hot stones.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary font-bold text-xl">$180</span>
+                                    <button onclick="navigateTo('booking')" class="bg-primary text-white px-6 py-3 rounded-full font-medium">
+                                        Book Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="luxury-card">
+                            <div class="p-8">
+                                <div class="amenity-icon mb-6">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Detox Facial</h3>
+                                <p class="text-gray-600 mb-6">Deep cleansing facial with organic seaweed and vitamin C serum.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary font-bold text-xl">$120</span>
+                                    <button onclick="navigateTo('booking')" class="bg-primary text-white px-6 py-3 rounded-full font-medium">
+                                        Book Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="luxury-card">
+                            <div class="p-8">
+                                <div class="amenity-icon mb-6">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Hydrotherapy</h3>
+                                <p class="text-gray-600 mb-6">Therapeutic water treatments in our heated mineral pools.</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-primary font-bold text-xl">$95</span>
+                                    <button onclick="navigateTo('booking')" class="bg-primary text-white px-6 py-3 rounded-full font-medium">
+                                        Book Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========== EVENTS PAGE ========== -->
+        <div id="events-page" class="page">
+            <section class="pt-32 pb-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">EVENTS & CELEBRATIONS</h6>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Perfect Venue for Every Occasion</h2>
+                        <p class="text-gray-600 max-w-3xl mx-auto text-lg">From intimate weddings to corporate conferences, our event spaces are designed to create unforgettable memories.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                        <div class="luxury-card" data-aos="fade-right">
+                            <div class="room-image">
+                                <img src="https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg" alt="Wedding Venue">
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold mb-4">Weddings</h3>
+                                <p class="text-gray-600 mb-6">Create your dream wedding with our dedicated wedding planners and stunning venues.</p>
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-heart text-primary mr-3"></i>
+                                        <span>Custom wedding planning</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-camera text-primary mr-3"></i>
+                                        <span>Professional photography</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-utensils text-primary mr-3"></i>
+                                        <span>Gourmet catering</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="luxury-card" data-aos="fade-left">
+                            <div class="room-image">
+                                <img src="https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg" alt="Conference">
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold mb-4">Corporate Events</h3>
+                                <p class="text-gray-600 mb-6">State-of-the-art conference facilities with full audiovisual support.</p>
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-desktop text-primary mr-3"></i>
+                                        <span>Advanced AV equipment</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-wifi text-primary mr-3"></i>
+                                        <span>High-speed business WiFi</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-coffee text-primary mr-3"></i>
+                                        <span>Custom catering options</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event Spaces -->
+                    <div class="bg-gray-50 rounded-3xl p-12" data-aos="fade-up">
+                        <h3 class="text-3xl font-bold mb-12 text-center">Event Spaces</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="text-center">
+                                <div class="text-5xl font-bold text-primary mb-4">500</div>
+                                <h4 class="font-bold mb-2">Grand Ballroom</h4>
+                                <p class="text-gray-600">Capacity for 500 guests</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-5xl font-bold text-primary mb-4">8</div>
+                                <h4 class="font-bold mb-2">Meeting Rooms</h4>
+                                <p class="text-gray-600">Various sizes available</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-5xl font-bold text-primary mb-4">3</div>
+                                <h4 class="font-bold mb-2">Outdoor Venues</h4>
+                                <p class="text-gray-600">Garden and poolside options</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========== GALLERY PAGE ========== -->
+        <div id="gallery-page" class="page">
+            <section class="pt-32 pb-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">VISUAL JOURNEY</h6>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Hotel Gallery</h2>
+                        <p class="text-gray-600 max-w-3xl mx-auto text-lg">Explore our stunning property through captivating images of our rooms, amenities, and breathtaking views.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="gallery-item" data-aos="fade-up">
+                            <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg" alt="Lobby" class="w-full h-64 object-cover">
+                            <div class="gallery-overlay">
+                                <h4 class="text-white text-xl font-bold">Grand Lobby</h4>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                            <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg" alt="Suite" class="w-full h-64 object-cover">
+                            <div class="gallery-overlay">
+                                <h4 class="text-white text-xl font-bold">Presidential Suite</h4>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                            <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg" alt="Pool" class="w-full h-64 object-cover">
+                            <div class="gallery-overlay">
+                                <h4 class="text-white text-xl font-bold">Infinity Pool</h4>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-aos="fade-up">
+                            <img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg" alt="Restaurant" class="w-full h-64 object-cover">
+                            <div class="gallery-overlay">
+                                <h4 class="text-white text-xl font-bold">Fine Dining</h4>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                            <img src="https://images.pexels.com/photos/3762875/pexels-photo-3762875.jpeg" alt="Spa" class="w-full h-64 object-cover">
+                            <div class="gallery-overlay">
+                                <h4 class="text-white text-xl font-bold">Spa Retreat</h4>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                            <img src="https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg" alt="Event" class="w-full h-64 object-cover">
+                            <div class="gallery-overlay">
+                                <h4 class="text-white text-xl font-bold">Event Space</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========== OFFERS PAGE ========== -->
+        <div id="offers-page" class="page">
+            <section class="pt-32 pb-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">SPECIAL DEALS</h6>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Exclusive Offers & Packages</h2>
+                        <p class="text-gray-600 max-w-3xl mx-auto text-lg">Take advantage of our special packages designed to enhance your stay with added value and unique experiences.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="luxury-card" data-aos="fade-up">
+                            <div class="p-8">
+                                <div class="bg-primary text-white inline-block px-6 py-2 rounded-full mb-6">
+                                    <span class="font-bold">20% OFF</span>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Romantic Getaway</h3>
+                                <p class="text-gray-600 mb-6">Perfect package for couples seeking a luxurious retreat.</p>
+                                <div class="space-y-3 mb-8">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-primary mr-3"></i>
+                                        <span>2 Nights in Executive Suite</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-primary mr-3"></i>
+                                        <span>Couples Spa Treatment</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-primary mr-3"></i>
+                                        <span>Romantic Dinner for Two</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-primary mr-3"></i>
+                                        <span>Late Check-out</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="text-gray-500 line-through">$1,499</span>
+                                        <span class="text-primary font-bold text-2xl ml-3">$1,199</span>
+                                    </div>
+                                    <button onclick="quickBook()" class="bg-primary text-white px-6 py-3 rounded-full font-medium">
+                                        Book Package
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="luxury-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="p-8">
+                                <div class="bg-primary text-white inline-block px-6 py-2 rounded-full mb-6">
+                                    <span class="font-bold">FAMILY DEAL</span>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Family Adventure</h3>
+                                <p class="text-gray-600 mb-6">Create lasting memories with your loved ones.</p>
+                                <div class="space-y-3 mb-8">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-primary mr-3"></i>
+                                        <span>Connecting Rooms Available</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-primary mr-3"></i>
+                                        <span>Kids Stay & Eat Free</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-primary mr-3"></i>
+                                        <span>Family Pool Access</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-primary mr-3"></i>
+                                        <span>Children's Activity Program</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="text-primary font-bold text-2xl">From $899</span>
+                                    </div>
+                                    <button onclick="quickBook()" class="bg-primary text-white px-6 py-3 rounded-full font-medium">
+                                        Book Package
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="luxury-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="p-8">
+                                <div class="bg-primary text-white inline-block px-6 py-2 rounded-full mb-6">
+                                    <span class="font-bold">BUSINESS</span>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Corporate Retreat</h3>
+                                <p class="text-gray-600 mb-6">Productive meetings combined with luxury relaxation.</p>
+                                <div class="space-y-3 mb-8">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-primary mr-3"></i>
+                                        <span>Meeting Room Access</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-primary mr-3"></i>
+                                        <span>High-Speed Business WiFi</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-primary mr-3"></i>
+                                        <span>Daily Breakfast Buffet</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-check text-primary mr-3"></i>
+                                        <span>Executive Lounge Access</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="text-primary font-bold text-2xl">From $699</span>
+                                    </div>
+                                    <button onclick="quickBook()" class="bg-primary text-white px-6 py-3 rounded-full font-medium">
+                                        Book Package
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========== ABOUT PAGE ========== -->
+        <div id="about-page" class="page">
+            <section class="pt-32 pb-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">OUR STORY</h6>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About Luxury Haven</h2>
+                        <p class="text-gray-600 max-w-3xl mx-auto text-lg">For over three decades, we have been redefining luxury hospitality with our commitment to excellence and personalized service.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                        <div data-aos="fade-right">
+                            <img src="https://images.pexels.com/photos/261169/pexels-photo-261169.jpeg" alt="Hotel Exterior" class="rounded-3xl w-full h-96 object-cover">
+                        </div>
+                        <div data-aos="fade-left">
+                            <h3 class="text-3xl font-bold mb-6">A Legacy of Luxury</h3>
+                            <p class="text-gray-600 mb-6">Founded in 1990, Luxury Haven Hotel & Resort has grown from a single property into an internationally acclaimed luxury brand with properties in the world's most desirable destinations.</p>
+                            <p class="text-gray-600 mb-6">Our philosophy is simple: provide exceptional service, luxurious accommodations, and unforgettable experiences that exceed our guests' expectations.</p>
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-primary mb-2">30+</div>
+                                    <p class="text-gray-600">Years of Excellence</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-primary mb-2">15</div>
+                                    <p class="text-gray-600">International Awards</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Section -->
+                    <div class="bg-gray-50 rounded-3xl p-12" data-aos="fade-up">
+                        <h3 class="text-3xl font-bold mb-12 text-center">Meet Our Leadership</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="text-center">
+                                <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
+                                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="CEO" class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="font-bold text-lg mb-2">Sarah Johnson</h4>
+                                <p class="text-primary mb-2">Chief Executive Officer</p>
+                                <p class="text-gray-600 text-sm">25+ years in luxury hospitality</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
+                                    <img src="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg" alt="General Manager" class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="font-bold text-lg mb-2">Michael Chen</h4>
+                                <p class="text-primary mb-2">General Manager</p>
+                                <p class="text-gray-600 text-sm">Expert in guest experience</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden">
+                                    <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg" alt="Head Chef" class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="font-bold text-lg mb-2">Antonio Rossi</h4>
+                                <p class="text-primary mb-2">Executive Chef</p>
+                                <p class="text-gray-600 text-sm">3 Michelin Stars</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========== CONTACT PAGE ========== -->
+        <div id="contact-page" class="page">
+            <section class="pt-32 pb-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">GET IN TOUCH</h6>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Contact Us</h2>
+                        <p class="text-gray-600 max-w-3xl mx-auto text-lg">Our dedicated team is available 24/7 to assist with reservations, inquiries, or special requests.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div data-aos="fade-right">
+                            <h3 class="text-2xl font-bold mb-8">Send Us a Message</h3>
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">First Name *</label>
+                                        <input type="text" class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Last Name *</label>
+                                        <input type="text" class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Email *</label>
+                                    <input type="email" class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Phone Number</label>
+                                    <input type="tel" class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2">Message *</label>
+                                    <textarea class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 h-40"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-medium text-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Send Message <i class="fas fa-paper-plane ml-2"></i>
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <div data-aos="fade-left">
+                            <h3 class="text-2xl font-bold mb-8">Contact Information</h3>
+                            <div class="space-y-8">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-6">
+                                        <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-2">Address</h4>
+                                        <p class="text-gray-600">123 Luxury Avenue<br>Metropolis, 10001<br>United States</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-6">
+                                        <i class="fas fa-phone-alt text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-2">Phone</h4>
+                                        <p class="text-gray-600">+1 (555) 123-4567<br>24/7 Reservations</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-6">
+                                        <i class="fas fa-envelope text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold mb-2">Email</h4>
+                                        <p class="text-gray-600">info@luxuryhavenhotel.com<br>reservations@luxuryhavenhotel.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Map -->
+                            <div class="mt-12">
+                                <h4 class="font-bold mb-4">Location</h4>
+                                <div class="bg-gray-200 h-64 rounded-2xl flex items-center justify-center">
+                                    <div class="text-center">
+                                        <i class="fas fa-map-marked-alt text-4xl text-primary mb-4"></i>
+                                        <p class="text-gray-600">Map integration would appear here</p>
+                                        <p class="text-sm text-gray-500">(Interactive map for production)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========== AUTHENTICATION PAGE ========== -->
+        <div id="auth-page" class="page">
+            <section class="pt-32 pb-20">
+                <div class="container mx-auto px-6">
+                    <div class="auth-form" data-aos="fade-up">
+                        <!-- Tabs -->
+                        <div class="auth-tabs">
+                            <div class="auth-tab active" onclick="switchAuthTab('login')">Login</div>
+                            <div class="auth-tab" onclick="switchAuthTab('signup')">Sign Up</div>
+                        </div>
+                        
+                        <!-- Login Form -->
+                        <div id="loginForm" class="auth-content">
+                            <h3 class="text-2xl font-bold mb-6 text-center">Welcome Back</h3>
+                            <form id="loginFormElement" onsubmit="handleLogin(event)">
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 mb-2">Email Address *</label>
+                                    <input type="email" id="loginEmail" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 mb-2">Password *</label>
+                                    <input type="password" id="loginPassword" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="mr-2">
+                                        <span class="text-gray-600">Remember me</span>
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-medium text-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Login <i class="fas fa-sign-in-alt ml-2"></i>
+                                </button>
+                            </form>
+                            
+                            <div class="text-center mt-6">
+                                <p class="text-gray-600">Don't have an account? <span onclick="switchAuthTab('signup')" class="text-primary font-medium cursor-pointer">Sign up here</span></p>
+                            </div>
+                        </div>
+                        
+                        <!-- Signup Form -->
+                        <div id="signupForm" class="auth-content hidden">
+                            <h3 class="text-2xl font-bold mb-6 text-center">Create Account</h3>
+                            <form id="signupFormElement" onsubmit="handleSignup(event)">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">First Name *</label>
+                                        <input type="text" id="firstName" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Last Name *</label>
+                                        <input type="text" id="lastName" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 mb-2">Email Address *</label>
+                                    <input type="email" id="signupEmail" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 mb-2">Phone Number *</label>
+                                    <input type="tel" id="phone" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Password *</label>
+                                        <input type="password" id="signupPassword" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Confirm Password *</label>
+                                        <input type="password" id="confirmPassword" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" required class="mr-2">
+                                        <span class="text-gray-600">I agree to the <a href="#" class="text-primary">Terms & Conditions</a> and <a href="#" class="text-primary">Privacy Policy</a></span>
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-medium text-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Create Account <i class="fas fa-user-plus ml-2"></i>
+                                </button>
+                            </form>
+                            
+                            <div class="text-center mt-6">
+                                <p class="text-gray-600">Already have an account? <span onclick="switchAuthTab('login')" class="text-primary font-medium cursor-pointer">Login here</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========== BOOKINGS PAGE ========== -->
+        <div id="bookings-page" class="page">
+            <section class="pt-32 pb-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">MY BOOKINGS</h6>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Your Reservations</h2>
+                        <p class="text-gray-600 max-w-3xl mx-auto text-lg">View and manage all your hotel bookings in one place.</p>
+                    </div>
+                    
+                    <!-- Bookings Table -->
+                    <div class="bg-white rounded-3xl shadow-xl overflow-hidden" data-aos="fade-up">
+                        <div class="p-8">
+                            <div class="flex justify-between items-center mb-8">
+                                <h3 class="text-2xl font-bold">Booking History</h3>
+                                <button onclick="navigateTo('booking')" class="bg-primary text-white px-6 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    <i class="fas fa-plus mr-2"></i> New Booking
+                                </button>
+                            </div>
+                            
+                            <div id="noBookingsMessage" class="text-center py-12">
+                                <i class="fas fa-calendar-times text-6xl text-gray-300 mb-4"></i>
+                                <h4 class="text-xl font-bold mb-2">No Bookings Found</h4>
+                                <p class="text-gray-600 mb-6">You haven't made any bookings yet.</p>
+                                <button onclick="navigateTo('booking')" class="bg-primary text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Book Now
+                                </button>
+                            </div>
+                            
+                            <div id="bookingsTable" class="overflow-x-auto">
+                                <table class="booking-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Booking ID</th>
+                                            <th>Room Type</th>
+                                            <th>Check-In</th>
+                                            <th>Check-Out</th>
+                                            <th>Guests</th>
+                                            <th>Total Price</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="bookingsTableBody">
+                                        <!-- Bookings will be dynamically added here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Booking Stats -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                        <div class="bg-gray-50 rounded-3xl p-8 text-center" data-aos="fade-up">
+                            <div class="text-4xl font-bold text-primary mb-2" id="totalBookings">0</div>
+                            <p class="text-gray-600">Total Bookings</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-3xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                            <div class="text-4xl font-bold text-primary mb-2" id="upcomingBookings">0</div>
+                            <p class="text-gray-600">Upcoming Stays</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-3xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="text-4xl font-bold text-primary mb-2">$<span id="totalSpent">0</span></div>
+                            <p class="text-gray-600">Total Spent</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ========== BOOKING PAGE ========== -->
+        <div id="booking-page" class="page">
+            <section class="pt-32 pb-20">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h6 class="text-primary text-lg font-semibold mb-4 tracking-wider">RESERVATIONS</h6>
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Book Your Stay</h2>
+                        <p class="text-gray-600 max-w-3xl mx-auto text-lg">Fill out the form below to check availability and reserve your luxury accommodation.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Booking Form -->
+                        <div class="lg:col-span-2">
+                            <form id="bookingForm" class="booking-form" onsubmit="handleBooking(event)">
+                                <h3 class="text-2xl font-bold mb-6">Booking Details</h3>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Check-In Date *</label>
+                                        <input type="date" id="bookingCheckIn" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Check-Out Date *</label>
+                                        <input type="date" id="bookingCheckOut" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Adults *</label>
+                                        <select id="bookingAdults" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                            <option value="1">1 Adult</option>
+                                            <option value="2" selected>2 Adults</option>
+                                            <option value="3">3 Adults</option>
+                                            <option value="4">4 Adults</option>
+                                            <option value="5">5+ Adults</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Children</label>
+                                        <select id="bookingChildren" class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                            <option value="0" selected>0 Children</option>
+                                            <option value="1">1 Child</option>
+                                            <option value="2">2 Children</option>
+                                            <option value="3">3 Children</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 mb-2">Room Type *</label>
+                                    <select id="bookingRoomType" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                        <option value="" selected disabled>Select Room Type</option>
+                                        <option value="Deluxe City View" data-price="299">Deluxe City View - $299/night</option>
+                                        <option value="Executive Suite" data-price="499">Executive Suite - $499/night</option>
+                                        <option value="Presidential Suite" data-price="899">Presidential Suite - $899/night</option>
+                                        <option value="Ocean View Room" data-price="399">Ocean View Room - $399/night</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 mb-2">Special Requests</label>
+                                    <textarea id="bookingRequests" class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 h-32" placeholder="Any special requests or requirements..."></textarea>
+                                </div>
+                                
+                                <h4 class="font-bold text-xl mb-4">Guest Information</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Full Name *</label>
+                                        <input type="text" id="bookingName" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Email *</label>
+                                        <input type="email" id="bookingEmail" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Phone Number *</label>
+                                        <input type="tel" id="bookingPhone" required class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 mb-2">Country</label>
+                                        <input type="text" id="bookingCountry" class="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-medium text-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                                    Confirm Booking <i class="fas fa-check-circle ml-2"></i>
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <!-- Booking Summary -->
+                        <div>
+                            <div class="booking-form sticky top-32">
+                                <h3 class="text-2xl font-bold mb-6">Booking Summary</h3>
+                                
+                                <div class="space-y-6">
+                                    <div>
+                                        <h4 class="font-bold mb-2">Selected Room</h4>
+                                        <div class="flex items-center">
+                                            <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg" class="w-20 h-20 object-cover rounded-xl mr-4">
+                                            <div>
+                                                <p class="font-bold" id="summaryRoomType">Deluxe City View</p>
+                                                <p class="text-gray-600 text-sm" id="summaryGuests">2 Guests</p>
+                                                <p class="text-primary font-bold" id="summaryPrice">$299/night</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="border-t pt-6">
+                                        <div class="flex justify-between mb-2">
+                                            <span id="summaryNights">3 nights</span>
+                                            <span id="summaryRoomTotal">$897.00</span>
+                                        </div>
+                                        <div class="flex justify-between mb-2">
+                                            <span>Taxes & Fees</span>
+                                            <span id="summaryTaxes">$89.70</span>
+                                        </div>
+                                        <div class="flex justify-between mb-2">
+                                            <span>Service Charge</span>
+                                            <span id="summaryService">$45.00</span>
+                                        </div>
+                                        <div class="border-t pt-2 mt-2">
+                                            <div class="flex justify-between font-bold text-lg">
+                                                <span>Total</span>
+                                                <span class="text-primary" id="summaryTotal">$1,031.70</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="bg-gray-50 p-4 rounded-xl">
+                                        <h4 class="font-bold mb-2">What's Included</h4>
+                                        <ul class="text-sm space-y-1">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-primary text-xs mt-1 mr-2"></i>
+                                                <span>Daily breakfast for two</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-primary text-xs mt-1 mr-2"></i>
+                                                <span>Complimentary WiFi</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-primary text-xs mt-1 mr-2"></i>
+                                                <span>Access to fitness center</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check text-primary text-xs mt-1 mr-2"></i>
+                                                <span>Evening turndown service</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="text-sm text-gray-600">
+                                        <p><i class="fas fa-info-circle mr-2"></i> Free cancellation up to 48 hours before check-in</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- About -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                            <i class="fas fa-crown text-white text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h2 class="text-2xl font-bold">Luxury<span class="text-primary">Haven</span></h2>
+                            <p class="text-gray-400 text-sm">Hotel & Spa Resort</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">Experience unparalleled luxury at our award-winning 5-star hotel offering premium accommodations, fine dining, and world-class spa services.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-tripadvisor"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a onclick="navigateTo('home')" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Home</a></li>
+                        <li><a onclick="navigateTo('rooms')" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Rooms & Suites</a></li>
+                        <li><a onclick="navigateTo('bookings')" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">My Bookings</a></li>
+                        <li><a onclick="navigateTo('auth')" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Login/Signup</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-4"></i>
+                            <span class="text-gray-400">123 Luxury Avenue, Metropolis 10001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-primary mt-1 mr-4"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-primary mt-1 mr-4"></i>
+                            <span class="text-gray-400">info@luxuryhavenhotel.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to receive exclusive offers and updates.</p>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Your email address" class="w-full p-4 rounded-xl bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                        <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                            Subscribe <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; <span id="currentYear"></span> Luxury Haven Hotel. All rights reserved.
+                </p>
+                <div class="flex items-center space-x-2 text-gray-400 text-sm">
+                    <img src="https://img.icons8.com/color/48/000000/visa.png" class="w-8 h-8" alt="Visa">
+                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" class="w-8 h-8" alt="Mastercard">
+                    <img src="https://img.icons8.com/color/48/000000/amex.png" class="w-8 h-8" alt="American Express">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- AOS (Animate on Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // ========== DATA STORAGE ==========
+        let bookings = JSON.parse(localStorage.getItem('hotelBookings')) || [];
+        let users = JSON.parse(localStorage.getItem('hotelUsers')) || [];
+        let currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
+        
+        // ========== NOTIFICATION SYSTEM ==========
+        function showNotification(type, title, message) {
+            const notification = document.getElementById('notification');
+            const icon = document.getElementById('notificationIcon');
+            const notificationTitle = document.getElementById('notificationTitle');
+            const notificationMessage = document.getElementById('notificationMessage');
+            
+            notification.className = 'notification';
+            
+            switch(type) {
+                case 'success':
+                    notification.classList.add('success', 'show');
+                    icon.className = 'fas fa-check-circle mr-3 text-xl';
+                    break;
+                case 'error':
+                    notification.classList.add('error', 'show');
+                    icon.className = 'fas fa-exclamation-circle mr-3 text-xl';
+                    break;
+                case 'info':
+                    notification.classList.add('info', 'show');
+                    icon.className = 'fas fa-info-circle mr-3 text-xl';
+                    break;
+            }
+            
+            notificationTitle.textContent = title;
+            notificationMessage.textContent = message;
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // ========== AUTHENTICATION FUNCTIONS ==========
+        function switchAuthTab(tab) {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const tabs = document.querySelectorAll('.auth-tab');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            
+            if (tab === 'login') {
+                document.querySelector('.auth-tab:nth-child(1)').classList.add('active');
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            } else {
+                document.querySelector('.auth-tab:nth-child(2)').classList.add('active');
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            }
+        }
+        
+        function handleSignup(event) {
+            event.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('signupEmail').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            // Validation
+            if (password !== confirmPassword) {
+                showNotification('error', 'Error', 'Passwords do not match');
+                return;
+            }
+            
+            // Check if user already exists
+            const existingUser = users.find(u => u.email === email);
+            if (existingUser) {
+                showNotification('error', 'Error', 'User already exists with this email');
+                return;
+            }
+            
+            // Create new user
+            const newUser = {
+                id: Date.now(),
+                firstName,
+                lastName,
+                email,
+                phone,
+                password,
+                createdAt: new Date().toISOString()
+            };
+            
+            users.push(newUser);
+            localStorage.setItem('hotelUsers', JSON.stringify(users));
+            
+            // Auto login
+            currentUser = newUser;
+            localStorage.setItem('currentUser', JSON.stringify(newUser));
+            
+            showNotification('success', 'Success', 'Account created successfully!');
+            updateUserUI();
+            
+            setTimeout(() => {
+                navigateTo('home');
+            }, 1500);
+        }
+        
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // Find user
+            const user = users.find(u => u.email === email && u.password === password);
+            
+            if (user) {
+                currentUser = user;
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                showNotification('success', 'Success', 'Logged in successfully!');
+                updateUserUI();
+                
+                setTimeout(() => {
+                    navigateTo('home');
+                }, 1500);
+            } else {
+                showNotification('error', 'Error', 'Invalid email or password');
+            }
+        }
+        
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            showNotification('success', 'Success', 'Logged out successfully!');
+            updateUserUI();
+            navigateTo('home');
+        }
+        
+        function updateUserUI() {
+            const authButtons = document.getElementById('authButtons');
+            const userProfile = document.getElementById('userProfile');
+            const userName = document.getElementById('userName');
+            const userAvatar = document.getElementById('userAvatar');
+            const mobileAuthButtons = document.getElementById('mobileAuthButtons');
+            
+            if (currentUser) {
+                authButtons.style.display = 'none';
+                userProfile.style.display = 'flex';
+                mobileAuthButtons.style.display = 'none';
+                
+                const fullName = `${currentUser.firstName} ${currentUser.lastName}`;
+                userName.textContent = fullName;
+                userAvatar.textContent = currentUser.firstName.charAt(0).toUpperCase();
+                
+                // Update bookings page if it's active
+                if (document.getElementById('bookings-page').classList.contains('active')) {
+                    loadBookings();
+                }
+            } else {
+                authButtons.style.display = 'flex';
+                userProfile.style.display = 'none';
+                mobileAuthButtons.style.display = 'flex';
+            }
+        }
+        
+        // ========== BOOKING SYSTEM ==========
+        function handleBooking(event) {
+            event.preventDefault();
+            
+            if (!currentUser) {
+                showNotification('error', 'Login Required', 'Please login to make a booking');
+                navigateTo('auth');
+                return;
+            }
+            
+            const checkIn = document.getElementById('bookingCheckIn').value;
+            const checkOut = document.getElementById('bookingCheckOut').value;
+            const adults = parseInt(document.getElementById('bookingAdults').value);
+            const children = parseInt(document.getElementById('bookingChildren').value);
+            const roomType = document.getElementById('bookingRoomType').value;
+            const roomPrice = parseFloat(document.querySelector(`#bookingRoomType option[value="${roomType}"]`).getAttribute('data-price'));
+            const requests = document.getElementById('bookingRequests').value;
+            const name = document.getElementById('bookingName').value;
+            const email = document.getElementById('bookingEmail').value;
+            const phone = document.getElementById('bookingPhone').value;
+            const country = document.getElementById('bookingCountry').value;
+            
+            // Calculate dates
+            const checkInDate = new Date(checkIn);
+            const checkOutDate = new Date(checkOut);
+            const nights = Math.ceil((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24));
+            
+            if (nights <= 0) {
+                showNotification('error', 'Error', 'Check-out date must be after check-in date');
+                return;
+            }
+            
+            // Create booking
+            const booking = {
+                id: 'BOOK-' + Date.now(),
+                userId: currentUser.id,
+                roomType,
+                roomPrice,
+                checkIn,
+                checkOut,
+                nights,
+                adults,
+                children,
+                totalGuests: adults + children,
+                specialRequests: requests,
+                guestName: name,
+                guestEmail: email,
+                guestPhone: phone,
+                guestCountry: country,
+                totalPrice: calculateTotalPrice(roomPrice, nights),
+                status: 'confirmed',
+                bookingDate: new Date().toISOString(),
+                bookingNumber: Math.floor(100000 + Math.random() * 900000)
+            };
+            
+            bookings.push(booking);
+            localStorage.setItem('hotelBookings', JSON.stringify(bookings));
+            
+            showNotification('success', 'Booking Confirmed', `Your booking #${booking.bookingNumber} has been confirmed!`);
+            
+            // Reset form
+            event.target.reset();
+            
+            // Navigate to bookings page
+            setTimeout(() => {
+                navigateTo('bookings');
+            }, 2000);
+        }
+        
+        function calculateTotalPrice(pricePerNight, nights) {
+            const roomTotal = pricePerNight * nights;
+            const taxes = roomTotal * 0.1; // 10% tax
+            const service = 45; // Fixed service charge
+            return roomTotal + taxes + service;
+        }
+        
+        function quickBook() {
+            if (!currentUser) {
+                showNotification('info', 'Login Required', 'Please login to book a room');
+                navigateTo('auth');
+                return;
+            }
+            navigateTo('booking');
+        }
+        
+        function quickBookRoom(roomType, price) {
+            if (!currentUser) {
+                showNotification('info', 'Login Required', 'Please login to book a room');
+                navigateTo('auth');
+                return;
+            }
+            
+            navigateTo('booking');
+            
+            // Pre-fill the room type
+            setTimeout(() => {
+                const roomSelect = document.getElementById('bookingRoomType');
+                roomSelect.value = roomType;
+                updateBookingSummary();
+            }, 500);
+        }
+        
+        function loadBookings() {
+            if (!currentUser) {
+                document.getElementById('noBookingsMessage').style.display = 'block';
+                document.getElementById('bookingsTable').style.display = 'none';
+                return;
+            }
+            
+            const userBookings = bookings.filter(b => b.userId === currentUser.id);
+            
+            if (userBookings.length === 0) {
+                document.getElementById('noBookingsMessage').style.display = 'block';
+                document.getElementById('bookingsTable').style.display = 'none';
+                return;
+            }
+            
+            document.getElementById('noBookingsMessage').style.display = 'none';
+            document.getElementById('bookingsTable').style.display = 'block';
+            
+            const tableBody = document.getElementById('bookingsTableBody');
+            tableBody.innerHTML = '';
+            
+            let totalBookings = 0;
+            let upcomingBookings = 0;
+            let totalSpent = 0;
+            
+            userBookings.forEach(booking => {
+                totalBookings++;
+                totalSpent += booking.totalPrice;
+                
+                const today = new Date();
+                const checkInDate = new Date(booking.checkIn);
+                if (checkInDate > today) {
+                    upcomingBookings++;
+                }
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${booking.bookingNumber}</td>
+                    <td>${booking.roomType}</td>
+                    <td>${formatDate(booking.checkIn)}</td>
+                    <td>${formatDate(booking.checkOut)}</td>
+                    <td>${booking.totalGuests}</td>
+                    <td>$${booking.totalPrice.toFixed(2)}</td>
+                    <td><span class="status-badge status-confirmed">${booking.status}</span></td>
+                    <td>
+                        <button onclick="viewBooking('${booking.id}')" class="text-primary hover:underline mr-3">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button onclick="cancelBooking('${booking.id}')" class="text-red-500 hover:underline">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+            
+            document.getElementById('totalBookings').textContent = totalBookings;
+            document.getElementById('upcomingBookings').textContent = upcomingBookings;
+            document.getElementById('totalSpent').textContent = totalSpent.toFixed(2);
+        }
+        
+        function viewBooking(bookingId) {
+            const booking = bookings.find(b => b.id === bookingId);
+            if (booking) {
+                alert(`Booking Details:\n\n` +
+                      `Booking #: ${booking.bookingNumber}\n` +
+                      `Room: ${booking.roomType}\n` +
+                      `Check-in: ${formatDate(booking.checkIn)}\n` +
+                      `Check-out: ${formatDate(booking.checkOut)}\n` +
+                      `Guests: ${booking.totalGuests}\n` +
+                      `Total: $${booking.totalPrice.toFixed(2)}\n` +
+                      `Status: ${booking.status}\n` +
+                      `Special Requests: ${booking.specialRequests || 'None'}`);
+            }
+        }
+        
+        function cancelBooking(bookingId) {
+            if (confirm('Are you sure you want to cancel this booking?')) {
+                const index = bookings.findIndex(b => b.id === bookingId);
+                if (index !== -1) {
+                    bookings[index].status = 'cancelled';
+                    localStorage.setItem('hotelBookings', JSON.stringify(bookings));
+                    showNotification('success', 'Booking Cancelled', 'Your booking has been cancelled');
+                    loadBookings();
+                }
+            }
+        }
+        
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        }
+        
+        function updateBookingSummary() {
+            const roomType = document.getElementById('bookingRoomType').value;
+            const roomOption = document.querySelector(`#bookingRoomType option[value="${roomType}"]`);
+            
+            if (!roomOption || !roomOption.getAttribute('data-price')) return;
+            
+            const price = parseFloat(roomOption.getAttribute('data-price'));
+            const checkIn = document.getElementById('bookingCheckIn').value;
+            const checkOut = document.getElementById('bookingCheckOut').value;
+            const adults = parseInt(document.getElementById('bookingAdults').value);
+            const children = parseInt(document.getElementById('bookingChildren').value);
+            
+            if (!checkIn || !checkOut) return;
+            
+            const checkInDate = new Date(checkIn);
+            const checkOutDate = new Date(checkOut);
+            const nights = Math.ceil((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24));
+            
+            if (nights <= 0) return;
+            
+            const roomTotal = price * nights;
+            const taxes = roomTotal * 0.1;
+            const service = 45;
+            const total = roomTotal + taxes + service;
+            
+            document.getElementById('summaryRoomType').textContent = roomType;
+            document.getElementById('summaryGuests').textContent = `${adults + children} Guests`;
+            document.getElementById('summaryPrice').textContent = `$${price}/night`;
+            document.getElementById('summaryNights').textContent = `${nights} nights`;
+            document.getElementById('summaryRoomTotal').textContent = `$${roomTotal.toFixed(2)}`;
+            document.getElementById('summaryTaxes').textContent = `$${taxes.toFixed(2)}`;
+            document.getElementById('summaryService').textContent = `$${service.toFixed(2)}`;
+            document.getElementById('summaryTotal').textContent = `$${total.toFixed(2)}`;
+        }
+        
+        // ========== PAGE NAVIGATION ==========
+        let currentPage = 'home';
+        
+        function navigateTo(pageId) {
+            // Hide current page
+            if (document.getElementById(currentPage + '-page')) {
+                document.getElementById(currentPage + '-page').classList.remove('active');
+            }
+            
+            // Remove active class from all nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Show new page
+            const targetPage = document.getElementById(pageId + '-page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+            } else {
+                console.error('Page not found:', pageId);
+                return;
+            }
+            
+            // Update current page
+            currentPage = pageId;
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Close mobile menu if open
+            if (mobileMenu) {
+                mobileMenu.classList.remove('open');
+            }
+            
+            // Update URL hash
+            window.location.hash = pageId;
+            
+            // Initialize animations
+            AOS.refresh();
+            
+            // Load bookings if on bookings page
+            if (pageId === 'bookings') {
+                loadBookings();
+            }
+            
+            // Update booking summary if on booking page
+            if (pageId === 'booking') {
+                // Add event listeners for real-time updates
+                const inputs = ['bookingCheckIn', 'bookingCheckOut', 'bookingAdults', 'bookingChildren', 'bookingRoomType'];
+                inputs.forEach(id => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.removeEventListener('change', updateBookingSummary);
+                        element.addEventListener('change', updateBookingSummary);
+                    }
+                });
+                updateBookingSummary();
+            }
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.textContent.trim().toLowerCase().includes(pageId.toLowerCase()) || 
+                    (pageId === 'home' && link.textContent.trim().toLowerCase() === 'home')) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // ========== OTHER FUNCTIONS ==========
+        // Page Loader
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('pageLoader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+            }, 500);
+            
+            // Update user UI on load
+            updateUserUI();
+            
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Set minimum dates for booking
+            const today = new Date().toISOString().split('T')[0];
+            document.querySelectorAll('input[type="date"]').forEach(input => {
+                input.min = today;
+            });
+            
+            // Handle hash navigation
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash + '-page')) {
+                navigateTo(hash);
+            }
+        });
+        
+        // Initialize Swipers
+        const heroSwiper = new Swiper('.heroSwiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 1000,
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuBtn && mobileMenu && closeMobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('open');
+            });
+            
+            closeMobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        }
+        
+        // Scroll Progress Bar
+        const scrollProgress = document.querySelector('.scroll-progress');
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            scrollProgress.style.width = scrolled + '%';
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        if (backToTop) {
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // Animated Counter
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const increment = target / 200;
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + '+';
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 10);
+        }
+        
+        // Initialize counters when in viewport
+        const counters = document.querySelectorAll('.counter');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+        
+        // Handle hash change
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash + '-page')) {
+                navigateTo(hash);
+            }
+        });
+    </script>
+</body>
+</html>
