@@ -394,12 +394,288 @@
             width: 100%;
         }
         
-        /* Mobile Menu */
+        /* Mobile Menu — modern luxe theme */
         .mobile-menu {
             transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            background-color: var(--secondary);
+            transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.4s ease;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(193, 154, 107, 0.18), transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.15), transparent 50%),
+                linear-gradient(160deg, #0A1929 0%, #122B45 50%, #0A1929 100%);
             overflow-y: auto;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .mobile-menu.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        /* Floating orbs for depth */
+        .mobile-menu::before,
+        .mobile-menu::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .mobile-menu::before {
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(193, 154, 107, 0.55), transparent 70%);
+            top: -40px;
+            right: -40px;
+            animation: float-orb 7s ease-in-out infinite;
+        }
+        .mobile-menu::after {
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.35), transparent 70%);
+            bottom: -60px;
+            left: -60px;
+            animation: float-orb 9s ease-in-out infinite;
+            animation-delay: -3s;
+        }
+
+        /* Mobile menu inner content */
+        .mobile-menu-inner {
+            position: relative;
+            z-index: 2;
+            padding: 80px 24px 40px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .mobile-menu-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+        .mobile-menu-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .mobile-menu-brand .crown {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(193, 154, 107, 0.5);
+        }
+        .mobile-menu-close {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.25s ease;
+        }
+        .mobile-menu-close:hover,
+        .mobile-menu-close:active {
+            background: var(--gold-gradient);
+            transform: rotate(90deg);
+            box-shadow: 0 4px 20px rgba(193, 154, 107, 0.5);
+        }
+
+        .mobile-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(193, 154, 107, 0.4), transparent);
+            margin: 16px 0 24px;
+        }
+
+        /* Glass nav card items */
+        .mobile-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 500;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-30px);
+            opacity: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .mobile-menu.open .mobile-nav-item {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        /* Stagger each item */
+        .mobile-menu.open .mobile-nav-item:nth-child(1)  { transition-delay: 0.10s; }
+        .mobile-menu.open .mobile-nav-item:nth-child(2)  { transition-delay: 0.14s; }
+        .mobile-menu.open .mobile-nav-item:nth-child(3)  { transition-delay: 0.18s; }
+        .mobile-menu.open .mobile-nav-item:nth-child(4)  { transition-delay: 0.22s; }
+        .mobile-menu.open .mobile-nav-item:nth-child(5)  { transition-delay: 0.26s; }
+        .mobile-menu.open .mobile-nav-item:nth-child(6)  { transition-delay: 0.30s; }
+        .mobile-menu.open .mobile-nav-item:nth-child(7)  { transition-delay: 0.34s; }
+        .mobile-menu.open .mobile-nav-item:nth-child(8)  { transition-delay: 0.38s; }
+        .mobile-menu.open .mobile-nav-item:nth-child(9)  { transition-delay: 0.42s; }
+        .mobile-menu.open .mobile-nav-item:nth-child(10) { transition-delay: 0.46s; }
+        .mobile-menu.open .mobile-nav-item:nth-child(11) { transition-delay: 0.50s; }
+
+        .mobile-nav-item:hover,
+        .mobile-nav-item:active {
+            background: rgba(193, 154, 107, 0.15);
+            border-color: rgba(193, 154, 107, 0.4);
+            transform: translateX(6px) !important;
+            box-shadow: 0 4px 20px rgba(193, 154, 107, 0.15);
+        }
+        .mobile-nav-item .icon-wrap {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: rgba(193, 154, 107, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 14px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        .mobile-nav-item:hover .icon-wrap,
+        .mobile-nav-item:active .icon-wrap {
+            background: var(--gold-gradient);
+            color: #fff;
+        }
+        .mobile-nav-item .arrow {
+            margin-left: auto;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+        .mobile-nav-item:hover .arrow {
+            color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        /* Admin highlight */
+        .mobile-nav-item.admin-item {
+            background: rgba(193, 154, 107, 0.12);
+            border-color: rgba(193, 154, 107, 0.3);
+        }
+        .mobile-nav-item.admin-item .icon-wrap {
+            background: var(--gold-gradient);
+            color: #fff;
+        }
+
+        /* Auth + CTA section */
+        .mobile-cta-group {
+            margin-top: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .mobile-cta-primary {
+            background: var(--gold-gradient);
+            color: #fff;
+            padding: 16px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 8px 24px rgba(193, 154, 107, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .mobile-cta-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 14px;
+            border-radius: 16px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-menu-footer {
+            margin-top: 32px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+        .mobile-menu-footer .socials {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .mobile-menu-footer .socials a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        .mobile-menu-footer .socials a:hover {
+            background: var(--gold-gradient);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(193, 154, 107, 0.4);
+        }
+
+        /* Top navbar on phones — slimmer, gold underline accent */
+        @media (max-width: 768px) {
+            #mainNav {
+                background: linear-gradient(180deg, rgba(10, 25, 41, 0.95) 0%, rgba(10, 25, 41, 0.85) 100%) !important;
+                backdrop-filter: blur(14px);
+                -webkit-backdrop-filter: blur(14px);
+                border-bottom: 1px solid rgba(193, 154, 107, 0.25);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+            }
+            #mainNav::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60%;
+                height: 1px;
+                background: linear-gradient(90deg, transparent, var(--primary), transparent);
+                opacity: 0.6;
+            }
+            #mobileMenuBtn {
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+            #mobileMenuBtn:active {
+                background: var(--gold-gradient);
+                transform: scale(0.92);
+                box-shadow: 0 4px 16px rgba(193, 154, 107, 0.4);
+            }
         }
 
         /* Admin Sidebar */
@@ -972,37 +1248,106 @@
     </nav>
     
     <!-- Mobile Menu -->
-    <div class="mobile-menu fixed inset-0 bg-secondary z-40 xl:hidden" id="mobileMenu">
-        <div class="flex justify-end p-6">
-            <button class="text-white text-4xl hover:text-primary transition-colors" id="closeMobileMenu" aria-label="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="flex flex-col items-center justify-center h-full space-y-8">
-            <a onclick="navigateTo('home')" class="text-white text-2xl font-medium cursor-pointer">Home</a>
-            <a onclick="navigateTo('rooms')" class="text-white text-2xl font-medium cursor-pointer">Rooms</a>
-            <a onclick="navigateTo('dining')" class="text-white text-2xl font-medium cursor-pointer">Dining</a>
-            <a onclick="navigateTo('spa')" class="text-white text-2xl font-medium cursor-pointer">Spa</a>
-            <a onclick="navigateTo('events')" class="text-white text-2xl font-medium cursor-pointer">Events</a>
-            <a onclick="navigateTo('gallery')" class="text-white text-2xl font-medium cursor-pointer">Gallery</a>
-            <a onclick="navigateTo('offers')" class="text-white text-2xl font-medium cursor-pointer">Offers</a>
-            <a onclick="navigateTo('about')" class="text-white text-2xl font-medium cursor-pointer">About</a>
-            <a onclick="navigateTo('bookings')" class="text-white text-2xl font-medium cursor-pointer">My Bookings</a>
-            <a onclick="navigateTo('admin')" id="adminNavLinkMobile" class="text-primary text-2xl font-bold cursor-pointer hidden">Admin Dashboard</a>
-            <a onclick="navigateTo('contact')" class="text-white text-2xl font-medium cursor-pointer">Contact</a>
-            
-            <div id="mobileAuthButtons" class="flex flex-col space-y-4">
-                <button onclick="navigateTo('auth')" class="bg-white text-secondary px-8 py-3 rounded-full font-medium text-lg">
-                    Login
-                </button>
-                <button onclick="navigateTo('auth')" class="bg-primary text-white px-8 py-3 rounded-full font-medium text-lg">
-                    Sign Up
+    <div class="mobile-menu fixed inset-0 z-40 xl:hidden" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <!-- Header: brand + close -->
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-brand">
+                    <div class="crown"><i class="fas fa-crown"></i></div>
+                    <div class="leading-tight">
+                        <h3 class="text-white text-lg font-bold m-0">Luxury<span class="text-primary">Haven</span></h3>
+                        <p class="text-xs text-gray-400 m-0">Hotel & Spa Resort</p>
+                    </div>
+                </div>
+                <button class="mobile-menu-close" id="closeMobileMenu" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
                 </button>
             </div>
-            
-            <button onclick="navigateTo('booking')" class="bg-primary text-white px-8 py-3 rounded-full font-medium text-lg mt-8">
-                Book Now
-            </button>
+
+            <div class="mobile-divider"></div>
+
+            <!-- Nav items as glass cards with icons -->
+            <div class="flex flex-col gap-2.5">
+                <a onclick="navigateTo('home')" class="mobile-nav-item">
+                    <div class="icon-wrap"><i class="fas fa-home"></i></div>
+                    <span>Home</span>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+                <a onclick="navigateTo('rooms')" class="mobile-nav-item">
+                    <div class="icon-wrap"><i class="fas fa-bed"></i></div>
+                    <span>Rooms</span>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+                <a onclick="navigateTo('dining')" class="mobile-nav-item">
+                    <div class="icon-wrap"><i class="fas fa-utensils"></i></div>
+                    <span>Dining</span>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+                <a onclick="navigateTo('spa')" class="mobile-nav-item">
+                    <div class="icon-wrap"><i class="fas fa-spa"></i></div>
+                    <span>Spa</span>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+                <a onclick="navigateTo('events')" class="mobile-nav-item">
+                    <div class="icon-wrap"><i class="fas fa-glass-cheers"></i></div>
+                    <span>Events</span>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+                <a onclick="navigateTo('gallery')" class="mobile-nav-item">
+                    <div class="icon-wrap"><i class="fas fa-images"></i></div>
+                    <span>Gallery</span>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+                <a onclick="navigateTo('offers')" class="mobile-nav-item">
+                    <div class="icon-wrap"><i class="fas fa-tags"></i></div>
+                    <span>Offers</span>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+                <a onclick="navigateTo('about')" class="mobile-nav-item">
+                    <div class="icon-wrap"><i class="fas fa-info-circle"></i></div>
+                    <span>About</span>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+                <a onclick="navigateTo('bookings')" class="mobile-nav-item">
+                    <div class="icon-wrap"><i class="fas fa-calendar-check"></i></div>
+                    <span>My Bookings</span>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+                <a onclick="navigateTo('admin')" id="adminNavLinkMobile" class="mobile-nav-item admin-item hidden">
+                    <div class="icon-wrap"><i class="fas fa-user-shield"></i></div>
+                    <span>Admin Dashboard</span>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+                <a onclick="navigateTo('contact')" class="mobile-nav-item">
+                    <div class="icon-wrap"><i class="fas fa-envelope"></i></div>
+                    <span>Contact</span>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </a>
+            </div>
+
+            <!-- CTA buttons -->
+            <div class="mobile-cta-group">
+                <button onclick="navigateTo('booking')" class="mobile-cta-primary">
+                    <i class="fas fa-calendar-plus"></i>
+                    Book Your Stay
+                </button>
+                <div id="mobileAuthButtons" class="flex flex-col gap-2">
+                    <button onclick="navigateTo('auth')" class="mobile-cta-secondary">
+                        <i class="fas fa-sign-in-alt mr-2"></i>Login / Sign Up
+                    </button>
+                </div>
+            </div>
+
+            <!-- Footer with socials -->
+            <div class="mobile-menu-footer">
+                <div class="socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p>&copy; LUXURY HAVEN</p>
+            </div>
         </div>
     </div>
     
